@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box; 
+    color:  #7B7B7B;
 }
 .price-card {
     margin-top: auto;
@@ -138,7 +139,7 @@ h2 {
   }
   .pagButton {
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

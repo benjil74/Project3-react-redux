@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box; 
+  color:  #7B7B7B;
 }
 .price-admin-card {
   border-radius: 8px;
