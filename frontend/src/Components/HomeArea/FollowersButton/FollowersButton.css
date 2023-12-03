@@ -1,0 +1,33 @@
+
+.follower-button-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+}
+.follower-button {
+   border-radius: 8px;
+   padding-right: 10px;
+   height: 40px;
+   width: 100px;
+   border: none; 
+   outline: none;
+   background-color: white;
+   font-size: 15px;
+   font-weight: bold;
+   text-align: right;
+   color: #93C01F;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   border: 2px solid #93C01F;
+   background-image: url("../../../assets/Follow-Off.png");
+   background-repeat: no-repeat;
+   background-size: 25%;
+   background-position: 10px 5px;
+}
+
+.follower-button.liked {
+   color:r#93C01F;
+   border-color: #93C01F;
+   background-image: url("../../../assets/Follow-On.png");
+}

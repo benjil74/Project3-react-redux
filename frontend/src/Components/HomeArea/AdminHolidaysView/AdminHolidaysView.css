@@ -1,0 +1,94 @@
+.holidaysView {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+.holiday-admin-card {
+  padding: 10px;
+  margin: 10px;
+  max-width: calc(33.33% - 20px); 
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; 
+}
+.price-admin-card {
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #008CBA;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+h3 {
+  text-align: center;
+  color: #0073BC;
+}
+.title{
+  font-weight: bold;
+  float: left;
+}
+
+.holiday-admin-card img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination button {
+  margin: 0 5px; 
+}
+
+.ButtonAdmin {
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white; 
+  color: #008CBA; 
+  border: 2px solid #008CBA;
+}
+
+.Nav1 {
+  text-decoration: none;
+  display: block;
+  color: #0073BC;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  margin-right: 4px;
+  margin-top: 4px;
+}
+.ButtonAdmin:hover {
+  color: #93C01F; 
+  border: 2px solid #93C01F;
+  font-weight: bold;
+}
+
+.Nav1:hover {
+  color: #93C01F; 
+}

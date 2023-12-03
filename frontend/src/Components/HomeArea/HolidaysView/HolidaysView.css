@@ -1,0 +1,158 @@
+.HolidaysView {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.holiday-card {
+    position: relative;
+    padding: 10px;
+    margin: auto;
+    max-width: 42%; 
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; 
+}
+.price-card {
+    margin-top: auto;
+    border-radius: 8px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #0073BC;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+  }
+
+.ButtonView {
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white; 
+  color: #0073BC; 
+  border: 2px solid white;
+}
+
+.Buttons {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ButtonView.Button1.clicked {
+  font-weight: bold;
+  color: #93C01F;
+  border: 2px solid #93C01F;
+}
+.ButtonView.Button2.clicked {
+    font-weight: bold;
+    color: #93C01F;
+    border: 2px solid #93C01F;
+  }
+  .ButtonView.Button3.clicked {
+    font-weight: bold;
+    color: #93C01F;
+    border: 2px solid #93C01F;
+  }
+  .ButtonView.Button4.clicked {
+    font-weight: bold;
+    color: #93C01F;
+    border: 2px solid #93C01F;
+  }
+
+h2 {
+    text-align: center;
+    color: #0073BC;
+}
+.title{
+    font-weight: bold;
+}
+.et {
+    float: right;
+}
+
+.holiday-card img {
+    position: relative;
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 4px 4px 4px #838383;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+ }
+  
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+ }
+  
+.pagination button {
+    margin: 0 5px; 
+}
+  
+.Picture img {
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+	width: 100%;
+ }
+
+ .Intro {
+    height: 500px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 120px;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #9E6161;
+ }
+ .folBut {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+  .Description {
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .pagButton {
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #0073BC; 
+    color: white; 
+    border: 2px solid #0073BC;
+  }
+  .pagButton:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed;
+    background-color: #ccc; 
+    color: #666; 
+    border: 2px solid #ccc; 
+  }

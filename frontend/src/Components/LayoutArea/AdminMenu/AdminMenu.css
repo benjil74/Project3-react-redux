@@ -1,0 +1,35 @@
+
+.Menu {
+  list-style-type: none;
+  height: 70px;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+.Nav {
+  float: right;
+  display: block;
+  color: #0073BC;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.Nav:hover {
+    font-weight: bold;
+    color:#93C01F;
+}
+
+.Logo img {
+  float: left;
+  max-height: 66px;
+  max-width: 100%; 
+  margin-right: 20px; 
+  margin-left: 20px;
+}
