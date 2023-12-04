@@ -76,5 +76,20 @@ router.post("/updateFollowers", async (req, res) => {
         response.status(500).send({message: "Server error"});
     }
       });
+
+router.get("/user/:id", [verifyLoggedIn], async (request, response) => {
+    const userID = request.params.id;
+    try {
+        const result = await usersLogic.getUserAsync(userID);
+        if (result) {
+            response.send(result);
+        } else {
+            response.status(404).json({ message: 'Holiday not found' });
+        }
+    } catch (error) {
+        console.log(error);
+        response.status(500).json({ message: 'Server error' });
+    }
+});
   
 module.exports = router;

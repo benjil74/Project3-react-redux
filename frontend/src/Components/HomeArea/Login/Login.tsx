@@ -7,6 +7,7 @@ import { clearUser, setUser } from "../../../Store/userSlice";
 import { useNavigate } from "react-router-dom";
 import image from "../../../assets/NewYork.jpg";
 import "./Login.css"
+import User from "../../../model/User";
 
 interface UserLogin {
     userID: string;
@@ -58,7 +59,6 @@ function LoginApp(){
             const token = response.data.token;
             const userID = response.data.userID;
             const role = response.data.role;
-            dispatch(setUser(response.data.userID));
             localStorage.removeItem("token");
             if (token) {
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -69,6 +69,20 @@ function LoginApp(){
             localStorage.setItem("token", token);
             localStorage.setItem("userID", userID);
             localStorage.setItem("role", role);
+             
+            const answer = await axios.get<User[]>(`http://localhost:4000/user/${userID}`);
+            if (answer.data.length > 0) {
+                const userData = answer.data[0];
+                const firstName = userData.firstName;
+                const lastName = userData.lastName;
+          
+                console.log('User data from server:', userData);
+          
+                dispatch(setUser({ userID, firstName, lastName }));
+              } else {
+                console.error('No user data returned from the server.');
+              }
+
             if (role === "admin")
             {
                 adminHandler();
@@ -78,10 +92,10 @@ function LoginApp(){
             {   
                 userHandler();
                 navigate("/holidays");
-            }  
-            console.log(response.data);
             } 
-            catch (ex: any) {
+            } 
+            
+        catch (ex: any) {
                 console.log(ex.message);
                 console.log((ex as AxiosError).response?.data);
                 setError("email", {

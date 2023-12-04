@@ -6,6 +6,12 @@ function getAllUsersAsync() {
     `);
 }
 
+function getUserAsync(userID){
+  const query = `SELECT firstName, lastName FROM users WHERE userID = '${userID}'`;
+    const user =dal.executeQueryAsync(query, [userID]);
+    return user;
+}
+
 function checkEmail(user){
     return dal.executeQueryAsync(`
     SELECT COUNT(*) AS count FROM users WHERE email = '${user.email}';
@@ -61,5 +67,6 @@ module.exports = {
     getFollowersCount,
     getAllFollowersCount,
     getFollowers,
-    getLikedHolidays
+    getLikedHolidays,
+    getUserAsync
 }
