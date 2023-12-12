@@ -75,9 +75,6 @@ function LoginApp(){
                 const userData = answer.data[0];
                 const firstName = userData.firstName;
                 const lastName = userData.lastName;
-          
-                console.log('User data from server:', userData);
-          
                 dispatch(setUser({ userID, firstName, lastName }));
               } else {
                 console.error('No user data returned from the server.');

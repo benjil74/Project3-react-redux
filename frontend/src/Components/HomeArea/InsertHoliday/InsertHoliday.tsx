@@ -3,7 +3,7 @@ import axios, { AxiosError } from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import image from "../../../assets/Elephant.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface HolidaysDetails{
     holidayID: number, 
@@ -15,31 +15,33 @@ interface HolidaysDetails{
     price: number,
     myImage: any
 }
-
-function InsertHoliday() {
-    const today = new Date();
+const today = new Date();
     today.setHours(0, 0, 0, 0);
+function InsertHoliday() {
+
     const navigate = useNavigate();
     const role = localStorage.getItem("role"); 
     const [isAdmin, setIsAdmin] = useState(false);
     let { register, handleSubmit, formState: { errors }, setError, getValues } = useForm<HolidaysDetails>();
     let isTokenAvailable = true;
     const token = localStorage.getItem("token");
+         useEffect(() => {
         if (token) {
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        }
-        else {
+        } else {
             delete axios.defaults.headers.common["Authorization"];
-            isTokenAvailable=false;
-        };
-        if (role==="admin") {
+            isTokenAvailable = false;
+        }
+
+        if (role === "admin") {
             setIsAdmin(true);
-        };
+        }
+    }, [token, role]);
 
     return (
         <div className="AddHoliday" style={{ backgroundImage:`url(${image})` }}>
              
-           { isTokenAvailable && isAdmin ? (
+           { isTokenAvailable && isAdmin  ? (
             <form className="add-card" onSubmit={handleSubmit(addHoliday)}>
                 <h2>Insert holiday</h2>
                 <p>
@@ -93,7 +95,7 @@ function InsertHoliday() {
                     <p>You are not logged in.</p>
                 </div>
             )  }
-            {!isAdmin && (
+            {!isTokenAvailable &&!isAdmin && (
                 <div>
                     <p>You are not admin.</p>
                 </div>
