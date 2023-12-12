@@ -84,7 +84,7 @@ router.get("/user/:id", [verifyLoggedIn], async (request, response) => {
         if (result) {
             response.send(result);
         } else {
-            response.status(404).json({ message: 'Holiday not found' });
+            response.status(404).json({ message: 'User not found' });
         }
     } catch (error) {
         console.log(error);

@@ -106,6 +106,7 @@ function LoginApp(){
             dispatch(clearUser());
             localStorage.removeItem("token");
             localStorage.removeItem("userID");
+            localStorage.removeItem("role");
         }
     };
 export default LoginApp;

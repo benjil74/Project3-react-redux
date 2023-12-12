@@ -23,8 +23,8 @@ const userSlice = createSlice({
     },
     clearUser: (state) => {
       state.userID = null;
-      state.firstName = null;
-      state.lastName = null;
+      state.firstName = "";
+      state.lastName = "";
     },
   },
 });

@@ -70,9 +70,10 @@ function UserReg() {
               if(response)
               {
                 axios.post<UserLogin>(`http://localhost:4000/auth/login`, user)
-        .then(response => {
+        .then(async response => {
             const token  =  response.data.token;
             const userID = response.data.userID;
+
             dispatch(setUser(response.data.userID));
                 if (token) {
                     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -81,6 +82,16 @@ function UserReg() {
                     delete axios.defaults.headers.common["Authorization"];
             localStorage.setItem("token", token);
             localStorage.setItem("userID", userID);
+
+            const answer = await axios.get<User[]>(`http://localhost:4000/user/${userID}`);
+            if (answer.data.length > 0) {
+                const userData = answer.data[0];
+                const firstName = userData.firstName;
+                const lastName = userData.lastName;
+                dispatch(setUser({ userID, firstName, lastName }));
+              } else {
+                console.error('No user data returned from the server.');
+              }
             navigate("/holidays");
       
         console.log(JSON.stringify(response.data));}
